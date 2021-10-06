@@ -1,0 +1,19 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY leftshifttwo IS
+PORT(	
+	data-input:in std_logic_vector(31 downto 0);
+	data-output:out std_logic_vector(31 downto 0)
+	);
+END leftshifttwo;
+
+ARCHITECTURE zhi OF leftshifttwo IS
+  BEGIN 
+  PROCESS(data-input)
+     BEGIN
+		data-output<=TO_STDLOGICVECTOR(TO_BITVECTOR(data-input) SLL(2));
+	END PROCESS;
+END zhi;

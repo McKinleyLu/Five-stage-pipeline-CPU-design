@@ -1,0 +1,195 @@
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>HDB</sub_system>
+	<file>/quartus/db/hdb/hdb_name_mgr.cpp</file>
+	<line>3494</line>
+	<callstack>
+	0x03278615: DB_HDB + 0x98615 (?open_cap_inst@HDB_NAME_MGR@@QAIXPAVHDB_CMP_ACTION_PT_INSTANCE@@@Z + 0x35)
+	</callstack>
+	<error>cap_inst != 0</error>
+	<date>Tue Dec 22 10:25:15 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>cap_inst != 0
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>HDB</sub_system>
+	<file>/quartus/db/hdb/hdb_name_mgr.cpp</file>
+	<line>3494</line>
+	<callstack>
+	0x032a8615: DB_HDB + 0x98615 (?open_cap_inst@HDB_NAME_MGR@@QAIXPAVHDB_CMP_ACTION_PT_INSTANCE@@@Z + 0x35)
+	</callstack>
+	<error>cap_inst != 0</error>
+	<date>Tue Dec 22 10:26:13 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>cap_inst != 0
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>HDB</sub_system>
+	<file>/quartus/db/hdb/hdb_name_mgr.cpp</file>
+	<line>3494</line>
+	<callstack>
+	0x03258615: DB_HDB + 0x98615 (?open_cap_inst@HDB_NAME_MGR@@QAIXPAVHDB_CMP_ACTION_PT_INSTANCE@@@Z + 0x35)
+	</callstack>
+	<error>cap_inst != 0</error>
+	<date>Tue Dec 22 10:29:32 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>cap_inst != 0
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x046ba584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Tue Dec 22 10:32:22 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x0493a584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Wed Dec 23 15:06:13 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x0427a584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Wed Dec 23 15:07:38 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x0496a584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Wed Dec 23 15:09:27 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x058ba584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Wed Dec 23 15:11:06 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x0340a584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Fri Dec 25 03:20:30 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x04a4a584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Fri Dec 25 13:28:56 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x02fda584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Fri Dec 25 16:01:02 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x0493a584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Fri Dec 25 17:01:07 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>VDB</sub_system>
+	<file>/quartus/db/vdb/vdb_value_bus.cpp</file>
+	<line>4101</line>
+	<callstack>
+	0x032fa584: db_vdb + 0x5a584 (?get_element@VDB_VALUE_BUS@@QBIPAVVDB_VALUE@@I@Z + 0x54)
+	</callstack>
+	<error>loc &lt; m_value-&gt;size()</error>
+	<date>Fri Dec 25 20:58:19 2020</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>loc &lt; m_value-&gt;size()
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+

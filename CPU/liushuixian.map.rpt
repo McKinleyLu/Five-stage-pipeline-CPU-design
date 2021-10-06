@@ -1,0 +1,1862 @@
+Analysis & Synthesis report for liushuixian
+Thu Jan 07 22:26:37 2021
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Thu Jan 07 22:26:36 2021        ;
+; Quartus II Version            ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name                 ; liushuixian                                  ;
+; Top-level Entity Name         ; zhong                                        ;
+; Family                        ; Stratix II                                   ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 2,209                                        ;
+;     Dedicated logic registers ; 1,160                                        ;
+; Total registers               ; 1160                                         ;
+; Total pins                    ; 809                                          ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 0                                            ;
+; DSP block 9-bit elements      ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
++-------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                        ; zhong              ; liushuixian        ;
+; Family name                                                  ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto DSP Block Replacement                                   ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM Block Balancing                                     ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Timing-Driven Synthesis                                      ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                  ; Off                ; Off                ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                          ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+
+; pc.vhd                           ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/pc.vhd           ;
+; signextender.vhd                 ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/signextender.vhd ;
+; decoder.vhd                      ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/decoder.vhd      ;
+; leftshifttwo.vhd                 ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/leftshifttwo.vhd ;
+; extender.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/extender.vhd     ;
+; Jkuobing.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/Jkuobing.vhd     ;
+; ifidreg.vhd                      ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/ifidreg.vhd      ;
+; idexreg.vhd                      ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/idexreg.vhd      ;
+; mux0.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux0.vhd         ;
+; add0.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/add0.vhd         ;
+; add1.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/add1.vhd         ;
+; ALU0.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/ALU0.vhd         ;
+; mux1.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux1.vhd         ;
+; mux2.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux2.vhd         ;
+; mux3.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux3.vhd         ;
+; control0.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/control0.vhd     ;
+; exmemreg.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/exmemreg.vhd     ;
+; mux4.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux4.vhd         ;
+; mux5.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux5.vhd         ;
+; mux6.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux6.vhd         ;
+; mux7.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux7.vhd         ;
+; mux8.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/mux8.vhd         ;
+; memwbreg.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/memwbreg.vhd     ;
+; ALU1.vhd                         ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/ALU1.vhd         ;
+; control1.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/control1.vhd     ;
+; control2.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/control2.vhd     ;
+; control3.vhd                     ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/control3.vhd     ;
+; rom.vhd                          ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/rom.vhd          ;
+; ram.vhd                          ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/ram.vhd          ;
+; register_set.vhd                 ; yes             ; User VHDL File                     ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/register_set.vhd ;
+; zhong.bdf                        ; yes             ; User Block Diagram/Schematic File  ; E:/大四上学期/系统结构/课程设计/417109030209刘萍/CPU/zhong.bdf        ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++-----------------------------------------------+-------+
+; Resource                                      ; Usage ;
++-----------------------------------------------+-------+
+; Estimated ALUTs Used                          ; 2209  ;
+; Dedicated logic registers                     ; 1160  ;
+;                                               ;       ;
+; Estimated ALUTs Unavailable                   ; 551   ;
+;                                               ;       ;
+; Total combinational functions                 ; 2209  ;
+; Combinational ALUT usage by number of inputs  ;       ;
+;     -- 7 input functions                      ; 6     ;
+;     -- 6 input functions                      ; 997   ;
+;     -- 5 input functions                      ; 474   ;
+;     -- 4 input functions                      ; 260   ;
+;     -- <=3 input functions                    ; 472   ;
+;                                               ;       ;
+; Combinational ALUTs by mode                   ;       ;
+;     -- normal mode                            ; 2073  ;
+;     -- extended LUT mode                      ; 6     ;
+;     -- arithmetic mode                        ; 130   ;
+;     -- shared arithmetic mode                 ; 0     ;
+;                                               ;       ;
+; Estimated ALUT/register pairs used            ; 2843  ;
+;                                               ;       ;
+; Total registers                               ; 1160  ;
+;     -- Dedicated logic registers              ; 1160  ;
+;     -- I/O registers                          ; 0     ;
+;                                               ;       ;
+; Estimated ALMs:  partially or completely used ; 1,422 ;
+;                                               ;       ;
+; I/O pins                                      ; 809   ;
+; Maximum fan-out node                          ; clk   ;
+; Maximum fan-out                               ; 1160  ;
+; Total fan-out                                 ; 16210 ;
+; Average fan-out                               ; 3.88  ;
++-----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
+; |zhong                     ; 2209 (0)          ; 1160 (0)     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 809  ; 0            ; |zhong                    ; work         ;
+;    |ALU0:inst15|           ; 42 (42)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|ALU0:inst15        ; work         ;
+;    |ALU1:inst21|           ; 520 (520)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|ALU1:inst21        ; work         ;
+;    |Control0:inst10|       ; 33 (33)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|Control0:inst10    ; work         ;
+;    |add1:inst6|            ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|add1:inst6         ; work         ;
+;    |control1:inst31|       ; 86 (86)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|control1:inst31    ; work         ;
+;    |control2:inst28|       ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|control2:inst28    ; work         ;
+;    |control3:inst29|       ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|control3:inst29    ; work         ;
+;    |exmemreg:inst23|       ; 0 (0)             ; 96 (96)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|exmemreg:inst23    ; work         ;
+;    |idexreg:inst17|        ; 0 (0)             ; 96 (96)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|idexreg:inst17     ; work         ;
+;    |ifidreg:inst5|         ; 0 (0)             ; 64 (64)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|ifidreg:inst5      ; work         ;
+;    |memwbreg:inst7|        ; 0 (0)             ; 104 (104)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|memwbreg:inst7     ; work         ;
+;    |mux0:inst3|            ; 35 (35)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux0:inst3         ; work         ;
+;    |mux1:inst13|           ; 33 (33)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux1:inst13        ; work         ;
+;    |mux2:inst33|           ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux2:inst33        ; work         ;
+;    |mux4:inst30|           ; 98 (98)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux4:inst30        ; work         ;
+;    |mux5:inst19|           ; 66 (66)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux5:inst19        ; work         ;
+;    |mux6:inst22|           ; 68 (68)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux6:inst22        ; work         ;
+;    |mux7:inst26|           ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux7:inst26        ; work         ;
+;    |mux8:inst27|           ; 3 (3)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|mux8:inst27        ; work         ;
+;    |pc:inst|               ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|pc:inst            ; work         ;
+;    |ram:inst16|            ; 671 (671)         ; 256 (256)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|ram:inst16         ; work         ;
+;    |register_set:inst1|    ; 352 (352)         ; 512 (512)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|register_set:inst1 ; work         ;
+;    |rom:inst4|             ; 97 (97)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |zhong|rom:inst4          ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                          ;
++------------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal          ; Free of Timing Hazards ;
++------------------------------------------------------+------------------------------+------------------------+
+; Control0:inst10|mux1_s[1]                            ; Control0:inst10|mux1_s[1]~0  ; yes                    ;
+; Control0:inst10|mux1_s[0]                            ; Control0:inst10|mux1_s[1]~0  ; yes                    ;
+; Control0:inst10|mux3_s                               ; Control0:inst10|mux1_s[1]~0  ; yes                    ;
+; ALU1:inst21|temp3[0]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; control1:inst31|alu_sel[0]                           ; control1:inst31|alu_sel[3]~5 ; yes                    ;
+; control1:inst31|alu_sel[1]                           ; control1:inst31|alu_sel[3]~5 ; yes                    ;
+; ALU1:inst21|symbol                                   ; ALU1:inst21|Equal8           ; yes                    ;
+; control1:inst31|alu_sel[3]                           ; control1:inst31|alu_sel[3]~5 ; yes                    ;
+; control1:inst31|alu_sel[2]                           ; control1:inst31|alu_sel[3]~7 ; yes                    ;
+; ALU1:inst21|temp3[1]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[2]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[3]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[4]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[5]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[6]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[7]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[8]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[9]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[10]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[11]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[12]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[13]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[14]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[15]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[16]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[17]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[18]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[19]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[20]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[21]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[22]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[23]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[24]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[25]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[26]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[27]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[28]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[29]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[30]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp3[31]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; Control0:inst10|mux2_s[1]                            ; Control0:inst10|mux2_s[1]~0  ; yes                    ;
+; Control0:inst10|mux2_s[0]                            ; Control0:inst10|mux2_s[1]~0  ; yes                    ;
+; ALU1:inst21|temp2[0]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[0]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[1]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[1]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[2]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[2]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[3]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[3]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[4]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[4]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[5]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[5]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[6]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[6]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[7]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[7]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[8]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[8]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[9]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[9]                                 ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[10]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[10]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[11]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[11]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[12]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[12]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[13]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[13]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[14]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[14]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[15]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[15]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[16]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[16]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[17]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[17]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[18]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[18]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[19]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[19]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[20]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[20]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[21]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[21]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[22]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[22]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[23]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[23]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[24]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[24]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[25]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[25]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[26]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[26]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[27]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[27]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp2[28]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; ALU1:inst21|temp1[28]                                ; ALU1:inst21|temp3[0]~1       ; yes                    ;
+; Number of user-specified and inferred latches = 106  ;                              ;                        ;
++------------------------------------------------------+------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++----------------------------------------+-------------------------------------------+
+; Register name                          ; Reason for Removal                        ;
++----------------------------------------+-------------------------------------------+
+; idexreg:inst17|shamt_output[5..31]     ; Stuck at GND due to stuck port data_in    ;
+; idexreg:inst17|imm_output[16..30]      ; Merged with idexreg:inst17|imm_output[31] ;
+; idexreg:inst17|shamt_output[4]         ; Merged with idexreg:inst17|ir_output[10]  ;
+; idexreg:inst17|shamt_output[3]         ; Merged with idexreg:inst17|ir_output[9]   ;
+; idexreg:inst17|shamt_output[2]         ; Merged with idexreg:inst17|ir_output[8]   ;
+; idexreg:inst17|shamt_output[1]         ; Merged with idexreg:inst17|ir_output[7]   ;
+; idexreg:inst17|shamt_output[0]         ; Merged with idexreg:inst17|ir_output[6]   ;
+; idexreg:inst17|imm_output[15]          ; Merged with idexreg:inst17|imm_output[31] ;
+; idexreg:inst17|ir_output[15]           ; Merged with idexreg:inst17|imm_output[31] ;
+; idexreg:inst17|ir_output[14]           ; Merged with idexreg:inst17|imm_output[14] ;
+; idexreg:inst17|ir_output[13]           ; Merged with idexreg:inst17|imm_output[13] ;
+; idexreg:inst17|ir_output[12]           ; Merged with idexreg:inst17|imm_output[12] ;
+; idexreg:inst17|ir_output[11]           ; Merged with idexreg:inst17|imm_output[11] ;
+; idexreg:inst17|ir_output[10]           ; Merged with idexreg:inst17|imm_output[10] ;
+; idexreg:inst17|ir_output[9]            ; Merged with idexreg:inst17|imm_output[9]  ;
+; idexreg:inst17|ir_output[8]            ; Merged with idexreg:inst17|imm_output[8]  ;
+; idexreg:inst17|ir_output[7]            ; Merged with idexreg:inst17|imm_output[7]  ;
+; idexreg:inst17|ir_output[6]            ; Merged with idexreg:inst17|imm_output[6]  ;
+; idexreg:inst17|ir_output[5]            ; Merged with idexreg:inst17|imm_output[5]  ;
+; idexreg:inst17|ir_output[4]            ; Merged with idexreg:inst17|imm_output[4]  ;
+; idexreg:inst17|ir_output[3]            ; Merged with idexreg:inst17|imm_output[3]  ;
+; idexreg:inst17|ir_output[2]            ; Merged with idexreg:inst17|imm_output[2]  ;
+; idexreg:inst17|ir_output[1]            ; Merged with idexreg:inst17|imm_output[1]  ;
+; idexreg:inst17|ir_output[0]            ; Merged with idexreg:inst17|imm_output[0]  ;
+; Total Number of Removed Registers = 64 ;                                           ;
++----------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1160  ;
+; Number of registers using Synchronous Clear  ; 160   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1128  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 896   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; ram:inst16|reg[3][2]                    ; 2       ;
+; ram:inst16|reg[11][1]                   ; 3       ;
+; ram:inst16|reg[3][0]                    ; 2       ;
+; ram:inst16|reg[7][0]                    ; 3       ;
+; ram:inst16|reg[15][0]                   ; 3       ;
+; register_set:inst1|reg[10][5]           ; 2       ;
+; register_set:inst1|reg[9][5]            ; 2       ;
+; register_set:inst1|reg[8][4]            ; 2       ;
+; register_set:inst1|reg[10][4]           ; 2       ;
+; register_set:inst1|reg[9][4]            ; 2       ;
+; register_set:inst1|reg[10][3]           ; 2       ;
+; register_set:inst1|reg[10][2]           ; 2       ;
+; register_set:inst1|reg[9][2]            ; 2       ;
+; register_set:inst1|reg[13][2]           ; 2       ;
+; register_set:inst1|reg[12][1]           ; 2       ;
+; register_set:inst1|reg[13][1]           ; 2       ;
+; register_set:inst1|reg[7][1]            ; 2       ;
+; register_set:inst1|reg[1][0]            ; 2       ;
+; register_set:inst1|reg[12][0]           ; 2       ;
+; Total number of inverted registers = 19 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 64 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |zhong|ifidreg:inst5|ir_output[30] ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[31][6]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[30][6]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[29][5]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[28][3]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[27][4]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[26][2]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[25][0]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[24][4]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[23][6]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[22][0]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[21][2]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[20][1]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[19][3]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[18][1]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[17][1]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[16][0]       ;
+; 5:1                ; 7 bits    ; 21 ALUTs      ; 14 ALUTs             ; 7 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[15][7]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[14][4]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[13][2]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[12][1]       ;
+; 5:1                ; 7 bits    ; 21 ALUTs      ; 14 ALUTs             ; 7 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[11][4]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[10][1]       ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[9][5]        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[8][5]        ;
+; 5:1                ; 7 bits    ; 21 ALUTs      ; 14 ALUTs             ; 7 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[7][5]        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[6][5]        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[5][5]        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[4][5]        ;
+; 5:1                ; 6 bits    ; 18 ALUTs      ; 12 ALUTs             ; 6 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[3][6]        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[2][0]        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[1][7]        ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 16 ALUTs             ; 8 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[0][0]        ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 4 ALUTs              ; 2 ALUTs                ; Yes        ; |zhong|ram:inst16|reg[3][2]        ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |zhong|Control0:inst10|mux1_s~10   ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |zhong|ALU1:inst21|ShiftLeft0      ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |zhong|ALU1:inst21|ShiftRight0     ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |zhong|ALU1:inst21|ShiftRight1     ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |zhong|ALU1:inst21|ShiftRight0     ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |zhong|ALU1:inst21|ShiftLeft0      ;
+; 5:1                ; 32 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |zhong|mux1:inst13|data[8]         ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |zhong|mux4:inst30|data[12]        ;
+; 4:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |zhong|ram:inst16|Mux15            ;
+; 8:1                ; 5 bits    ; 25 ALUTs      ; 20 ALUTs             ; 5 ALUTs                ; No         ; |zhong|mux5:inst19|data[13]        ;
+; 5:1                ; 32 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |zhong|mux2:inst33|data[29]        ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 4 ALUTs              ; 2 ALUTs                ; No         ; |zhong|mux0:inst3|data[0]          ;
+; 5:1                ; 30 bits   ; 90 ALUTs      ; 60 ALUTs             ; 30 ALUTs               ; No         ; |zhong|mux0:inst3|data[8]          ;
+; 5:1                ; 32 bits   ; 96 ALUTs      ; 96 ALUTs             ; 0 ALUTs                ; No         ; |zhong|mux6:inst22|data[28]        ;
+; 16:1               ; 32 bits   ; 320 ALUTs     ; 320 ALUTs            ; 0 ALUTs                ; No         ; |zhong|register_set:inst1|Mux53    ;
+; 16:1               ; 32 bits   ; 320 ALUTs     ; 320 ALUTs            ; 0 ALUTs                ; No         ; |zhong|register_set:inst1|Mux29    ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |zhong|ram:inst16|Mux8             ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |zhong|ram:inst16|Mux27            ;
+; 16:1               ; 8 bits    ; 80 ALUTs      ; 80 ALUTs             ; 0 ALUTs                ; No         ; |zhong|ram:inst16|Mux2             ;
+; 16:1               ; 8 bits    ; 80 ALUTs      ; 80 ALUTs             ; 0 ALUTs                ; No         ; |zhong|ram:inst16|Mux23            ;
+; 7:1                ; 22 bits   ; 88 ALUTs      ; 88 ALUTs             ; 0 ALUTs                ; No         ; |zhong|mux5:inst19|data[21]        ;
+; 7:1                ; 5 bits    ; 20 ALUTs      ; 20 ALUTs             ; 0 ALUTs                ; No         ; |zhong|mux5:inst19|data[0]         ;
+; 8:1                ; 8 bits    ; 40 ALUTs      ; 40 ALUTs             ; 0 ALUTs                ; No         ; |zhong|ram:inst16|Mux8             ;
+; 23:1               ; 11 bits   ; 165 ALUTs     ; 110 ALUTs            ; 55 ALUTs               ; No         ; |zhong|ALU1:inst21|result[25]      ;
+; 22:1               ; 7 bits    ; 98 ALUTs      ; 70 ALUTs             ; 28 ALUTs               ; No         ; |zhong|ALU1:inst21|result[14]      ;
+; 23:1               ; 4 bits    ; 60 ALUTs      ; 44 ALUTs             ; 16 ALUTs               ; No         ; |zhong|ALU1:inst21|result[7]       ;
+; 25:1               ; 3 bits    ; 48 ALUTs      ; 36 ALUTs             ; 12 ALUTs               ; No         ; |zhong|ALU1:inst21|result[30]      ;
+; 24:1               ; 3 bits    ; 48 ALUTs      ; 36 ALUTs             ; 12 ALUTs               ; No         ; |zhong|ALU1:inst21|result[2]       ;
+; 16:1               ; 8 bits    ; 80 ALUTs      ; 80 ALUTs             ; 0 ALUTs                ; No         ; |zhong|ram:inst16|Mux11            ;
+; 19:1               ; 2 bits    ; 24 ALUTs      ; 24 ALUTs             ; 0 ALUTs                ; No         ; |zhong|control1:inst31|mux6_s[0]   ;
+; 20:1               ; 2 bits    ; 26 ALUTs      ; 26 ALUTs             ; 0 ALUTs                ; No         ; |zhong|control1:inst31|mux4_s[1]   ;
+; 26:1               ; 2 bits    ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |zhong|control1:inst31|mux5_s[2]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Jan 07 22:26:02 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off liushuixian -c liushuixian
+Info: Found 2 design units, including 1 entities, in source file pc.vhd
+    Info: Found design unit 1: pc-mealy
+    Info: Found entity 1: pc
+Info: Found 2 design units, including 1 entities, in source file signextender.vhd
+    Info: Found design unit 1: signextender-shuju
+    Info: Found entity 1: signextender
+Info: Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info: Found design unit 1: decoder-mealy
+    Info: Found entity 1: decoder
+Info: Found 2 design units, including 1 entities, in source file leftshifttwo.vhd
+    Info: Found design unit 1: leftshifttwo-zhi
+    Info: Found entity 1: leftshifttwo
+Info: Found 2 design units, including 1 entities, in source file extender.vhd
+    Info: Found design unit 1: extender-shuju
+    Info: Found entity 1: extender
+Info: Found 2 design units, including 1 entities, in source file Jkuobing.vhd
+    Info: Found design unit 1: Jkuobing-zhi
+    Info: Found entity 1: Jkuobing
+Info: Found 2 design units, including 1 entities, in source file ifidreg.vhd
+    Info: Found design unit 1: ifidreg-a
+    Info: Found entity 1: ifidreg
+Info: Found 2 design units, including 1 entities, in source file idexreg.vhd
+    Info: Found design unit 1: idexreg-a
+    Info: Found entity 1: idexreg
+Info: Found 2 design units, including 1 entities, in source file mux0.vhd
+    Info: Found design unit 1: mux0-shuju
+    Info: Found entity 1: mux0
+Info: Found 2 design units, including 1 entities, in source file add0.vhd
+    Info: Found design unit 1: add0-al
+    Info: Found entity 1: add0
+Info: Found 2 design units, including 1 entities, in source file add1.vhd
+    Info: Found design unit 1: add1-al
+    Info: Found entity 1: add1
+Info: Found 2 design units, including 1 entities, in source file ALU0.vhd
+    Info: Found design unit 1: ALU0-project
+    Info: Found entity 1: ALU0
+Info: Found 2 design units, including 1 entities, in source file mux1.vhd
+    Info: Found design unit 1: mux1-shuju
+    Info: Found entity 1: mux1
+Info: Found 2 design units, including 1 entities, in source file mux2.vhd
+    Info: Found design unit 1: mux2-shuju
+    Info: Found entity 1: mux2
+Info: Found 2 design units, including 1 entities, in source file mux3.vhd
+    Info: Found design unit 1: mux3-shuju
+    Info: Found entity 1: mux3
+Info: Found 2 design units, including 1 entities, in source file control0.vhd
+    Info: Found design unit 1: control0-ct
+    Info: Found entity 1: Control0
+Info: Found 2 design units, including 1 entities, in source file exmemreg.vhd
+    Info: Found design unit 1: exmemreg-a
+    Info: Found entity 1: exmemreg
+Info: Found 2 design units, including 1 entities, in source file mux4.vhd
+    Info: Found design unit 1: mux4-shuju
+    Info: Found entity 1: mux4
+Info: Found 2 design units, including 1 entities, in source file mux5.vhd
+    Info: Found design unit 1: mux5-shuju
+    Info: Found entity 1: mux5
+Info: Found 2 design units, including 1 entities, in source file mux6.vhd
+    Info: Found design unit 1: mux6-shuju
+    Info: Found entity 1: mux6
+Info: Found 2 design units, including 1 entities, in source file mux7.vhd
+    Info: Found design unit 1: mux7-shuju
+    Info: Found entity 1: mux7
+Info: Found 2 design units, including 1 entities, in source file mux8.vhd
+    Info: Found design unit 1: mux8-shuju
+    Info: Found entity 1: mux8
+Info: Found 2 design units, including 1 entities, in source file memwbreg.vhd
+    Info: Found design unit 1: memwbreg-a
+    Info: Found entity 1: memwbreg
+Info: Found 2 design units, including 1 entities, in source file ALU1.vhd
+    Info: Found design unit 1: ALU1-project
+    Info: Found entity 1: ALU1
+Info: Found 2 design units, including 1 entities, in source file control1.vhd
+    Info: Found design unit 1: control1-ct
+    Info: Found entity 1: control1
+Info: Found 2 design units, including 1 entities, in source file control2.vhd
+    Info: Found design unit 1: control2-ct
+    Info: Found entity 1: control2
+Info: Found 2 design units, including 1 entities, in source file control3.vhd
+    Info: Found design unit 1: control3-ct
+    Info: Found entity 1: control3
+Info: Found 2 design units, including 1 entities, in source file rom.vhd
+    Info: Found design unit 1: rom-register_zhc_body
+    Info: Found entity 1: rom
+Info: Found 2 design units, including 1 entities, in source file ram.vhd
+    Info: Found design unit 1: ram-a
+    Info: Found entity 1: ram
+Info: Found 2 design units, including 1 entities, in source file register_set.vhd
+    Info: Found design unit 1: register_set-register_set_body
+    Info: Found entity 1: register_set
+Info: Found 1 design units, including 1 entities, in source file zhong.bdf
+    Info: Found entity 1: zhong
+Info: Elaborating entity "zhong" for the top level hierarchy
+Info: Elaborating entity "Control0" for hierarchy "Control0:inst10"
+Warning (10631): VHDL Process Statement warning at control0.vhd(28): inferring latch(es) for signal or variable "mux3_s", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at control0.vhd(28): inferring latch(es) for signal or variable "mux1_s", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at control0.vhd(28): inferring latch(es) for signal or variable "mux2_s", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "mux2_s[0]" at control0.vhd(28)
+Info (10041): Inferred latch for "mux2_s[1]" at control0.vhd(28)
+Info (10041): Inferred latch for "mux1_s[0]" at control0.vhd(28)
+Info (10041): Inferred latch for "mux1_s[1]" at control0.vhd(28)
+Info (10041): Inferred latch for "mux3_s" at control0.vhd(28)
+Info: Elaborating entity "ALU0" for hierarchy "ALU0:inst15"
+Info: Elaborating entity "mux1" for hierarchy "mux1:inst13"
+Info: Elaborating entity "register_set" for hierarchy "register_set:inst1"
+Info: Elaborating entity "control3" for hierarchy "control3:inst29"
+Info: Elaborating entity "memwbreg" for hierarchy "memwbreg:inst7"
+Info: Elaborating entity "control2" for hierarchy "control2:inst28"
+Info: Elaborating entity "exmemreg" for hierarchy "exmemreg:inst23"
+Info: Elaborating entity "control1" for hierarchy "control1:inst31"
+Warning (10631): VHDL Process Statement warning at control1.vhd(25): inferring latch(es) for signal or variable "alu_sel", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "alu_sel[0]" at control1.vhd(25)
+Info (10041): Inferred latch for "alu_sel[1]" at control1.vhd(25)
+Info (10041): Inferred latch for "alu_sel[2]" at control1.vhd(25)
+Info (10041): Inferred latch for "alu_sel[3]" at control1.vhd(25)
+Info: Elaborating entity "idexreg" for hierarchy "idexreg:inst17"
+Info: Elaborating entity "signextender" for hierarchy "signextender:inst8"
+Warning (10492): VHDL Process Statement warning at signextender.vhd(19): signal "m" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at signextender.vhd(21): signal "m" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at signextender.vhd(15): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data[0]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[1]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[2]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[3]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[4]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[5]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[6]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[7]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[8]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[9]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[10]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[11]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[12]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[13]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[14]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[15]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[16]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[17]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[18]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[19]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[20]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[21]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[22]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[23]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[24]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[25]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[26]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[27]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[28]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[29]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[30]" at signextender.vhd(15)
+Info (10041): Inferred latch for "data[31]" at signextender.vhd(15)
+Info: Elaborating entity "decoder" for hierarchy "decoder:inst2"
+Info: Elaborating entity "ifidreg" for hierarchy "ifidreg:inst5"
+Info: Elaborating entity "rom" for hierarchy "rom:inst4"
+Warning (10631): VHDL Process Statement warning at rom.vhd(21): inferring latch(es) for signal or variable "reg", which holds its previous value in one or more paths through the process
+Warning (10873): Using initial value X (don't care) for net "reg[128][7]" at rom.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "reg[128][6]" at rom.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "reg[128][5]" at rom.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "reg[128][4]" at rom.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "reg[128][3]" at rom.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "reg[128][2]" at rom.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "reg[128][1]" at rom.vhd(17)
+Warning (10873): Using initial value X (don't care) for net "reg[128][0]" at rom.vhd(17)
+Info (10041): Inferred latch for "reg[0][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[0][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[0][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[0][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[0][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[0][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[0][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[0][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[1][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[2][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[3][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[4][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[5][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[6][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[7][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[8][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[9][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[10][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[11][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[12][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[13][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[14][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[15][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[16][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[17][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[18][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[19][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[20][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[21][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[22][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[23][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[24][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[25][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[26][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[27][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[28][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[29][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[30][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[31][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[32][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[33][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[34][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[35][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[36][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[37][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[38][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[39][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[40][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[41][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[42][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[43][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[44][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[45][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[46][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[47][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[48][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[49][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[50][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[51][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[52][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[53][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[54][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[55][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[56][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[57][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[58][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[59][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[60][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[61][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[62][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[63][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[64][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[65][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[66][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[67][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[68][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[69][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[70][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[71][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[72][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[73][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[74][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[75][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[76][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[77][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[78][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[79][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[80][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[81][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[82][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[83][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[84][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[85][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[86][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[87][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[88][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[89][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[90][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[91][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[92][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[93][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[94][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[95][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[96][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[97][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[98][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[99][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[100][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[101][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[102][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[103][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[104][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[105][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[106][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[107][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[108][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[109][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[110][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[111][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[112][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[113][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[114][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[115][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[116][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[117][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[118][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[119][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[120][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[121][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[122][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[123][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[124][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[125][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[126][7]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][0]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][1]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][2]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][3]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][4]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][5]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][6]" at rom.vhd(21)
+Info (10041): Inferred latch for "reg[127][7]" at rom.vhd(21)
+Info: Elaborating entity "pc" for hierarchy "pc:inst"
+Info: Elaborating entity "mux0" for hierarchy "mux0:inst3"
+Info: Elaborating entity "add0" for hierarchy "add0:inst25"
+Info: Elaborating entity "add1" for hierarchy "add1:inst6"
+Info: Elaborating entity "leftshifttwo" for hierarchy "leftshifttwo:inst9"
+Info: Elaborating entity "Jkuobing" for hierarchy "Jkuobing:inst11"
+Info: Elaborating entity "mux2" for hierarchy "mux2:inst33"
+Info: Elaborating entity "ALU1" for hierarchy "ALU1:inst21"
+Warning (10631): VHDL Process Statement warning at ALU1.vhd(16): inferring latch(es) for signal or variable "temp1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU1.vhd(16): inferring latch(es) for signal or variable "temp2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU1.vhd(16): inferring latch(es) for signal or variable "temp3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU1.vhd(16): inferring latch(es) for signal or variable "symbol", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "symbol" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[0]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[1]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[2]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[3]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[4]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[5]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[6]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[7]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[8]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[9]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[10]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[11]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[12]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[13]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[14]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[15]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[16]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[17]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[18]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[19]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[20]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[21]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[22]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[23]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[24]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[25]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[26]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[27]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[28]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[29]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[30]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp3[31]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[0]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[1]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[2]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[3]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[4]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[5]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[6]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[7]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[8]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[9]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[10]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[11]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[12]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[13]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[14]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[15]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[16]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[17]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[18]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[19]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[20]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[21]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[22]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[23]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[24]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[25]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[26]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[27]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[28]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[29]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[30]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[31]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp2[32]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[0]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[1]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[2]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[3]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[4]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[5]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[6]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[7]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[8]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[9]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[10]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[11]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[12]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[13]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[14]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[15]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[16]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[17]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[18]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[19]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[20]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[21]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[22]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[23]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[24]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[25]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[26]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[27]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[28]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[29]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[30]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[31]" at ALU1.vhd(16)
+Info (10041): Inferred latch for "temp1[32]" at ALU1.vhd(16)
+Info: Elaborating entity "mux4" for hierarchy "mux4:inst30"
+Info: Elaborating entity "mux5" for hierarchy "mux5:inst19"
+Info: Elaborating entity "ram" for hierarchy "ram:inst16"
+Info: Elaborating entity "extender" for hierarchy "extender:inst12"
+Info: Elaborating entity "mux6" for hierarchy "mux6:inst22"
+Info: Elaborating entity "mux7" for hierarchy "mux7:inst26"
+Info: Elaborating entity "mux8" for hierarchy "mux8:inst27"
+Info: Elaborating entity "mux3" for hierarchy "mux3:inst14"
+Warning: Latch Control0:inst10|mux1_s[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ifidreg:inst5|ir_output[30]
+Warning: Latch Control0:inst10|mux1_s[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ifidreg:inst5|ir_output[30]
+Warning: Latch Control0:inst10|mux3_s has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ifidreg:inst5|ir_output[30]
+Warning: Latch control1:inst31|alu_sel[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal idexreg:inst17|ir_output[26]
+Warning: Latch control1:inst31|alu_sel[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal idexreg:inst17|ir_output[26]
+Warning: Latch control1:inst31|alu_sel[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal idexreg:inst17|ir_output[26]
+Warning: Latch control1:inst31|alu_sel[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal idexreg:inst17|ir_output[26]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal idexreg:inst17|ir_output[26]
+Warning: Latch Control0:inst10|mux2_s[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ifidreg:inst5|ir_output[30]
+Warning: Latch Control0:inst10|mux2_s[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ifidreg:inst5|ir_output[30]
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "addsel" is stuck at VCC
+    Warning (13410): Pin "extop[1]" is stuck at VCC
+    Warning (13410): Pin "extop[0]" is stuck at GND
+    Warning (13410): Pin "idex_write" is stuck at VCC
+Info: Registers with preset signals will power-up high
+Info: Implemented 3908 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 807 output pins
+    Info: Implemented 3099 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 269 megabytes
+    Info: Processing ended: Thu Jan 07 22:26:37 2021
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:00:30
+
+

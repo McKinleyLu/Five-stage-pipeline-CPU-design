@@ -1,0 +1,27 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY  pc IS
+PORT( CLK :IN STD_LOGIC;		--CLOCK         
+          RESET: IN  STD_LOGIC; 
+          PCWRITE: IN  STD_LOGIC; 
+          INPUT:IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+          OUTPUT:OUT STD_LOGIC_VECTOR(31 DOWNTO 0)       
+          );      
+ end  pc;
+ 
+ ARCHITECTURE mealy  OF pc is
+signal Q:std_logic_vector(31 downto 0);
+ BEGIN	
+	PROCESS (CLK,PCWRITE,INPUT,RESET,Q)			
+	BEGIN
+	IF RESET<='0'THEN
+        Q<="00000000000000000000000000000000";
+    ELSIF PCWRITE ='1' and (CLK'event and CLK='1') THEN
+       Q<=INPUT;--xieru
+     END IF;
+  END PROCESS;
+  OUTPUT<=Q;
+END mealy; 

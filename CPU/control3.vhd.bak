@@ -1,0 +1,48 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL,IEEE.NUMERIC_STD.ALL;
+
+ENTITY control3 IS
+PORT( 
+      
+	  IR : IN 	STD_LOGIC_VECTOR(31 DOWNTO 0);
+	  memwbwrite: out std_logic;                         
+	   
+	  mux7_s: out std_logic;
+	  mux8_s: OUT  STD_LOGIC                
+	);	         
+END control3;
+
+ARCHITECTURE ct OF control3 IS
+	
+BEGIN
+		
+	PROCESS(IR)		
+	BEGIN
+	
+		if ir(31 downto 26)="010000" or ir(31 downto 0)= x"00000000" or (ir(31 downto 26)<"001111" and ir(31 downto 26)>"001001") then
+		    regwrite<='0';
+		else
+		    regwrite<='1';
+		end if; -- 判断是否是要更新寄存器组的指令
+		
+		
+		--判断将谁送入寄存器组
+		if ir(31 downto 26)="001111"  then
+		    mux7_s<='0';--选择lmd的内容
+		else
+		    mux7_s<='1';
+		end if;
+		
+		if ir(31 downto 26)="000000"  then  -- 选择rd作为目标地址
+		    mux8_s<='0';
+		elsif ir(31 downto 26)="000001"  then  -- 选择rd作为目标地址
+		    mux8_s<='0';
+	    elsif ir(31 downto 26)="000010"  then  -- 选择rd作为目标地址
+		    mux8_s<='0';
+		else   --选择rt作为目标地址
+		    mux8_s<='1'; 
+		end if ;
+	
+	END PROCESS;
+
+	end;

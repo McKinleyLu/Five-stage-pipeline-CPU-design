@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity signextender is 
+port (ExtOp:in std_logic_vector(1 downto 0);
+	data1:in std_logic_vector(15 downto 0);
+	data:out std_logic_vector(31 downto 0)
+	);
+END signextender;
+
+ARCHITECTURE shuju OF signextender IS
+signal m:std_logic;
+  BEGIN 
+  PROCESS(ExtOp,data1)
+     BEGIN
+     m<=data1(15);
+     if ExtOp="10" then
+     if m='0' then
+     data<="0000000000000000"&data1;
+     elsif m='1' then
+     data<="1111111111111111"&data1;
+     end if;
+     elsif ExtOp="01" then
+     data<="0000000000000000"&data1;
+     else
+     data<="00000000000000000000000000000000"
+     end if;
+     
+     END PROCESS;
+END shuju;     

@@ -1,0 +1,64 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+entity rom is
+port
+   (	clk	     : IN  STD_LOGIC;
+		reset    : IN  STD_LOGIC;
+		RAdr	 : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);     			 
+		
+		Dount    :  OUT	STD_LOGIC_VECTOR(31 DOWNTO 0)
+		);
+end rom ;
+
+architecture register_zhc_body OF rom is	
+ TYPE my_array IS ARRAY(128 DOWNTO 0) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL reg : my_array;
+	SIGNAL AddR :STD_LOGIC_VECTOR(8 DOWNTO 0) ;
+  BEGIN	
+    AddR<=RAdr(8 downto 0); 
+	PROCESS (reset,clk,RAdr)		
+	VARIABLE i : INTEGER;	
+	BEGIN
+		IF reset='0' THEN
+			reg(0)  <= "00111100"; reg(1)  <= "00000011"; reg(2)  <= "00000000"; reg(3)  <= "00000000";	--LW
+			reg(4)  <= "00111100"; reg(5)  <= "00000100"; reg(6)  <= "00000000"; reg(7)  <= "00000100"; --LW
+			reg(8)  <= "00000000"; reg(9)  <= "01100100"; reg(10) <= "00010000"; reg(11) <= "00010000"; --SLT
+			reg(12) <= "00101000"; reg(13) <= "01000000"; reg(14) <= "00000000"; reg(15) <= "00000100"; --BEQ
+			reg(16) <= "00111100"; reg(17) <= "00000100"; reg(18) <= "00000000"; reg(19) <= "00001000";	--LW			
+			reg(20) <= "00000000"; reg(21) <= "11100001"; reg(22) <= "00111000"; reg(23) <= "00001000"; --SUB
+            reg(24) <= "00110000"; reg(25) <= "11100000"; reg(26) <= "11111111"; reg(27) <= "11111011";	--BGTZ							
+			reg(28) <= "00110100"; reg(29) <= "11100000"; reg(30) <= "00000000"; reg(31) <= "00000010";	--BLEZ		
+			reg(32) <= "00111100"; reg(33) <= "00000011"; reg(34) <= "00000000"; reg(35) <= "00000100";	--LW	
+			reg(36) <= "00001101"; reg(37) <= "00000000"; reg(38) <= "00000000"; reg(39) <= "00000000"; --JR
+			reg(40) <= "01000001"; reg(41) <= "01100011"; reg(42) <= "00000000"; reg(43) <= "00010000"; --SW
+					
+			reg(44) <= "00111100"; reg(45) <= "00001011"; reg(46) <= "00000000"; reg(47) <= "00001100"; --LW
+			reg(48) <= "00110101"; reg(49) <= "01100000"; reg(50) <= "00000000"; reg(51) <= "00000111"; --BLEZ
+			reg(52) <= "00000001"; reg(53) <= "01101100"; reg(54) <= "01110000"; reg(55) <= "00010000"; --SLT
+			reg(56) <= "00101001"; reg(57) <= "11000001"; reg(58) <= "00000000"; reg(59) <= "00000111"; --BEQ
+			reg(60) <= "00000001"; reg(61) <= "01101101"; reg(62) <= "01110000"; reg(63) <= "00010000"; --SLT
+			reg(64) <= "00101001"; reg(65) <= "11000001"; reg(66) <= "00000000"; reg(67) <= "00000111"; --BEQ
+		    reg(68) <= "00011101"; reg(69) <= "01101011"; reg(70) <= "00000000"; reg(71) <= "00001100"; --ANDI
+			reg(72) <= "00100101"; reg(73) <= "01101011"; reg(74) <= "00000000"; reg(75) <= "00000111"; --XORI
+			reg(76) <= "01000100"; reg(77) <= "00000000"; reg(78) <= "00000000"; reg(79) <= "00011010";	--J									
+			reg(80) <= "00000101"; reg(81) <= "01100000"; reg(82) <= "01011000"; reg(83) <= "00000100";	--NOT	
+			reg(84) <= "01000100"; reg(85) <= "00000000"; reg(86) <= "00000000"; reg(87) <= "00001100"; --J
+			reg(88) <= "00010001"; reg(89) <= "01101011"; reg(90) <= "00000000"; reg(91) <= "00000001"; --ADDI
+			reg(92) <= "00001101"; reg(93) <= "00100000"; reg(94) <= "00000000"; reg(95) <= "00000000"; --JR
+			reg(96) <= "00001000"; reg(97) <= "00001011"; reg(98) <= "01011000"; reg(99) <= "01000000"; --SLL
+			reg(100)<= "00001101"; reg(101)<= "01000000"; reg(102)<= "00000000"; reg(103)<= "00000000";	--JR
+			reg(104)<= "01000000"; reg(105)<= "00001011"; reg(106)<= "00000000"; reg(107)<= "00010100";	--SW
+			for i in 127 downto 108 loop
+	          reg(i)<="00000000";
+	        END LOOP;
+	      END if;   
+	  END PROCESS;
+	
+	  Dount (31 downto 24) <= reg(CONV_INTEGER(AddR));
+	  Dount (23 downto 16) <= reg(CONV_INTEGER(AddR+1));
+	  Dount (15 downto 8)  <= reg(CONV_INTEGER(AddR+2));
+	  Dount ( 7 downto 0)  <= reg(CONV_INTEGER(AddR+3));
+	  
+	END register_zhc_body;
